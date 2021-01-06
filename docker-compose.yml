@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  mysql-files:
+    container_name: mysql-5
+    image: mysql:5
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_DATABASE: files
+      MYSQL_USER: user-files
+      MYSQL_PASSWORD: password-files
+      MYSQL_ROOT_PASSWORD: root
+
+  file-process-project:
+    container_name: file-process-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: github.com/patriciaramos1995/file-process-project
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      JAVA_OPTS: -Xmx512m -Dfile.encoding=UTF-8  -Duser.Timezone=America/Sao_Paulo -Duser.country=BR -Duser.language=pt"
+    volumes:
+      - $HOME/data/in/:/data/in/
+      - $HOME/data/out/:/data/out/
+    ports:
+      - "8090:8090"
+
+
+
+networks:
+  file-process:
+    name: file-process
+    driver: bridge
+
