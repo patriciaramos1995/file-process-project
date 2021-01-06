@@ -3,7 +3,7 @@ spring:
   datasource:
     platform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/files?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.16.238.11:3306/files?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: user-files
     password: password-files
   jpa:
