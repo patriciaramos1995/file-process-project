@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mysql-files:
-    container_name: mysql-5
+    container_name: mysql-files
     image: mysql:5
     expose:
       - 3306
@@ -30,11 +30,16 @@ services:
       - $HOME/data/out/:/data/out/
     ports:
       - "8090:8090"
+    depends_on:
+      - mysql-files
 
 
 
 networks:
-  file-process:
+  file-process-project:
+    name: file-process
+    driver: bridge
+  mysql-files:
     name: file-process
     driver: bridge
 

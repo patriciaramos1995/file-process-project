@@ -21,9 +21,10 @@ configurado</b>.
 <br>
 <code> docker-compose build </code>
 <br>
-<code> docker-compose up </code>
+<code> docker-compose up mysql-files </code>
 <br>
-<br>
+<code> docker-compose up file-process-project </code>
+<br><br>
 <li>
 Dentro do projeto, já existe uma pasta na home do container docker seguido do diretório <b>/data/in/</b>. Essa pasta já 
 possui um arquivo para testes. No passo 2, a aplicação irá executar e será criada a pasta <b>{home_docker}/data/out/</b> 
