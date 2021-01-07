@@ -9,26 +9,27 @@
 <li>O pior vendedor</li>
 </ul>
 
-<u>Requisito</u>: <b>docker instalado</b> ou caso execute o projeto sem subir o container, <b>possuir o java 11
-configurado</b>.
+<u>Requisito</u>: <b>docker instalado</b>, <b>possuir o java 11 e gradle configurado</b>.
 
 #### Para executar o projeto siga os seguintes passos abaixo:
 
 <ol>
 <li> Clone o projeto</li>
-<br>
+<p> Na <code>{home_usuario_local}/data/in/</code> adicione os arquivos à serem processados. 
+Pode ser utilizada a pasta que está no projeto com o arquivo de teste Arquivo_Exemplo.dat que está na 
+<code>{pasta_projeto_clonado}/data/in</code></p>
 <li> Estando dentro da pasta do projeto, realize os seguintes comandos:</li>
 <br>
-<code> docker-compose build </code>
+Para subir o banco mysql utilize o seguinte comando docker:
 <br>
 <code> docker-compose up mysql-files </code>
-<br>
-<code> docker-compose up file-process-project </code>
 <br><br>
-<li>
-Dentro do projeto, já existe uma pasta na home do container docker seguido do diretório <b>/data/in/</b>. Essa pasta já 
-possui um arquivo para testes. No passo 2, a aplicação irá executar e será criada a pasta <b>{home_docker}/data/out/</b> 
-e dentro dela será gerado o arquivo <b>process-result.done.dat</b> com os resultados</li>
+Para rodar a aplicação dê o seguinte comando gradle:
+<br>
+<code>./gradlew bootRun</code>
+<br><br>
+<li> Será gerado o arquivo processado na pasta <code>{home_usuario_local}/data/out/</code> com o nome de <b>process-result.done.dat</b></li>
+
 <br>
 </ol>
 
